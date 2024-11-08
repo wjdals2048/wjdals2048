@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# 사용자에게 질문을 출력하고 입력을 받음
+echo "재미있습니까? (yes / no)"
+read answer
+
+# 입력에 따라 분기 처리
+case "$answer" in
+    [yY] | [yY][eE][sS])  # yes 또는 Y, y 등의 입력
+        echo "yes"
+        ;;
+    [nN] | [nN][oO]*)  # no 또는 n, N, o, O, nonono 등의 입력
+        echo "no"
+        ;;
+    *)  # 기타 입력에 대한 처리
+        echo "yes 또는 no로 입력해 주세요."
+        ;;
+esac
