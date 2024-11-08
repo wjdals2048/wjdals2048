@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# 첫 번째 인수는 첫 번째 숫자, 두 번째 인수는 연산자, 세 번째 인수는 두 번째 숫자로 가정
+num1=$1
+operator=$2
+num2=$3
+
+# 연산자에 따라 연산 수행
+case "$operator" in
+    "+")
+        result=$((num1 + num2))
+        ;;
+    "-")
+        result=$((num1 - num2))
+        ;;
+    *)
+        echo "지원되지 않는 연산자입니다. + 또는 -만 사용 가능합니다."
+        exit 1
+        ;;
+esac
+
+# 결과 출력
+echo " $result"
+
