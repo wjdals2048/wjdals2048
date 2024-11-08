@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# 검색할 이름을 인자로 입력받기
+name=$1
+
+# 이름이 입력되었는지 확인
+if [ -z "$name" ]; then
+    echo "사용법: $0 <이름>"
+    exit 1
+fi
+
+# DB.txt 파일에서 입력한 이름을 포함하는 줄을 검색하여 출력
+result=$(grep -i "$name" DB.txt)
+
+# 검색 결과 확인 및 출력
+if [ -n "$result" ]; then
+    echo "검색 결과:"
+    echo "$result"
+else
+    echo "$name 이름의 정보를 DB.txt에서 찾을 수 없습니다."
+fi
+
+
